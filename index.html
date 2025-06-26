@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotepadApp</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="Note">
+        <h1>NOTEPAD</h1>
+        <label class="switch">
+         <input type="checkbox" id="toggleMode">
+         <span class="slider"></span>
+        </label>
+    </div> 
+    <div class="content">
+        <div class="whole">
+            <div><h2>Online Notepad</h2></div>
+            <div class="container">
+                <textarea name="title" id="title" placeholder=" My Title"></textarea>
+                <textarea name="notes" id="text" placeholder="Write your notes here..."></textarea>
+            </div>
+            <div class="Button">
+                 <button onclick="saveNote()">SAVE</button>
+                 <button onclick="discardNote()">discard</button>
+              <button onclick="createNewNote">Create New</button>
+                <button onclick="downloadNote()">Download</button>
+            </div>
+        </div>
+     
+        <div class="sidebar" id="sidebar">
+             <h3>Saved Notes</h3>
+             <ul id="noteList"></ul>    
+        </div>
+  </div>
+
+        </div>
+    </div>
+<script src="/script.js"></script>
+</body>
+</html>
