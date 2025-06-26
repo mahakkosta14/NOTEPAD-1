@@ -9,8 +9,6 @@
 body {
     height: 100vh;
     background-color: #FFFBDE;
-    /* font-size: 16px; */
-    height: 100vh;
 }
 
 
@@ -29,12 +27,15 @@ h2{
     color:#3F7D58 ;
 }
 .whole{
+    flex: 3 1 500px;
     height: 80vh;
     width: 80vw;
     border: 0.3em solid black;
     align-content: center;
     margin-top: 2em;
     margin-left: 10vw;
+    margin: 1em;
+    border: 0.3em solidblack
     
 }
 
@@ -199,6 +200,9 @@ body.dark {
 /* adding a side bar */
 
 .sidebar {
+  flex: 1 1 200px;
+  margin: 1em;
+  min-width: 150px
   width: 200px;
   float: left;
   margin-top: 2em;
@@ -228,6 +232,8 @@ h3{
 .content{
   display: flex;
   flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
 }
 
 /* for edit and dlt button in sidebar*/
