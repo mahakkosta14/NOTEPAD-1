@@ -210,6 +210,14 @@ function searchNotes(query) {
     item.style.display = item.textContent.toLowerCase().includes(query.toLowerCase()) ? 'flex' : 'none';
   });
 }
+function toggleSearch() {
+  const input = document.getElementById("searchBar");
+  input.classList.toggle("show");
+  if (input.classList.contains("show")) {
+    input.focus(); // Optional: put cursor in the search bar
+  }
+}
+
 //pin
 function pinNote(index) {
   let notes = JSON.parse(localStorage.getItem('notes')) || [];
