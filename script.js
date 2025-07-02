@@ -194,4 +194,15 @@ function formatSize(size) {
   document.execCommand("fontSize", false, size);
 }
 
+function setAlignment(command, buttonElement) {
+  document.execCommand(command);
+
+  // Remove 'active' from all alignment buttons
+  document.querySelectorAll('.align-btn').forEach(btn => btn.classList.remove('active'));
+
+  // Add 'active' to the clicked one
+  buttonElement.classList.add('active');
+}
+
+
 
