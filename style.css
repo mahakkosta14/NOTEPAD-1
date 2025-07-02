@@ -263,10 +263,22 @@ h3{
   flex-wrap: wrap;
   gap: 10px;
   margin: 10px 0;
-}
-
-.format-toolbar button, .format-toolbar select, .format-toolbar input[type="color"] {
   padding: 5px;
-  font-size: 14px;
 }
 
+.format-toolbar button,
+.format-toolbar select,
+.format-toolbar input[type="color"] {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.format-toolbar button:hover,
+.format-toolbar select:hover {
+  background-color: #e0e0e0;
+}
