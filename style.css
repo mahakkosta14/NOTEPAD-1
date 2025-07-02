@@ -99,6 +99,11 @@ h2, h3 {
 .format-toolbar select:hover {
   background-color: #e0e0e0;
 }
+.format-toolbar button.active {
+  background-color: #3F7D58;
+  color: white;
+  border: 1px solid #2e6248;
+}
 
 /* ===== Sidebar ===== */
 .sidebar {
