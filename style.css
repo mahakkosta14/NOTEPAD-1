@@ -122,13 +122,6 @@ textarea::placeholder {
     color: aliceblue;
     height: 3em ;
     width: 7em;
-    colour
-#id {
-    height: 3em;
-    width: 7em;
-    background-color: #3F7D58;
-    color:aliceblue ;
-    width: 100%;
 }
 #Note {
     font-size: 1rem;
