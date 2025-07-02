@@ -203,6 +203,34 @@ function setAlignment(command, buttonElement) {
   // Add 'active' to the clicked one
   buttonElement.classList.add('active');
 }
+//searchbar
+function searchNotes(query) {
+  const items = document.querySelectorAll('.note-item');
+  items.forEach(item => {
+    item.style.display = item.textContent.toLowerCase().includes(query.toLowerCase()) ? 'flex' : 'none';
+  });
+}
+//pin
+function pinNote(index) {
+  let notes = JSON.parse(localStorage.getItem('notes')) || [];
+  const pinned = notes.splice(index, 1)[0];
+  notes.unshift(pinned);
+  localStorage.setItem('notes', JSON.stringify(notes));
+  renderNotes();
+}
+//undo
+document.execCommand('undo'); // use with toolbar button
+document.execCommand('redo');
+//autosave
+const noteArea = document.getElementById('text');
+noteArea.addEventListener('input', () => {
+  localStorage.setItem('autosavedNote', noteArea.innerHTML);
+});
+window.onload = () => {
+  const saved = localStorage.getItem('autosavedNote');
+  if (saved) noteArea.innerHTML = saved;
+};
+
 
 
 
