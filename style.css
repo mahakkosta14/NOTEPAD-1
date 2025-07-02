@@ -82,21 +82,6 @@ input::placeholder,
 textarea::placeholder {
   font-size: inherit; /* Ensures placeholder scales with input */
 }
-
-
-.Button{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2em;
-}
-
-button{
-/*     height: 3em;
-    width: 7em;
-    background-color: #3F7D58;
-    color:aliceblue ; */
-}
-
 @media (max-width: 500px) {
   .whole {
     width: 100vw;
@@ -120,9 +105,12 @@ button{
   }
 
   .Button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
     flex-direction: column;
     gap: 1em;
-      height: 3em;
+    height: 3em;
     width: 7em;
     background-color: #3F7D58;
     color:aliceblue ;
