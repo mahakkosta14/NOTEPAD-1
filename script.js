@@ -190,4 +190,11 @@ function formatFont(font) {
 function formatSize(size) {
   document.execCommand("fontSize", false, size);
 }
+function format(command, buttonElement) {
+  document.execCommand(command);
+
+  // Toggle button appearance
+  buttonElement.classList.toggle("active");
+}
+
 
