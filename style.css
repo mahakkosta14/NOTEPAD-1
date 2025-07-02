@@ -88,18 +88,20 @@ textarea::placeholder {
     margin-top: 2em;
     flex-direction: column;
     gap: 1em;
+}
+button{
     height: 3em;
     width: 7em;
     width: 100%;
     background-color: #3F7D58;
     color:aliceblue ;
-}
+}    
 #Note {
     font-size: 1rem;
     height: auto;
     padding: 0.5em;
   }
-    }
+
 
 @media (max-width: 500px) {
   .whole {
