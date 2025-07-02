@@ -270,3 +270,16 @@ h3{
 .icon-container button:hover {
   opacity: 0.7;
 }
+
+.format-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.format-toolbar button, .format-toolbar select, .format-toolbar input[type="color"] {
+  padding: 5px;
+  font-size: 14px;
+}
+
