@@ -174,3 +174,20 @@ window.onload = () => {
 
   renderSidebar(); // Show notes on load
 };
+
+function format(command) {
+  document.execCommand(command, false, null);
+}
+
+function formatColor(color) {
+  document.execCommand("foreColor", false, color);
+}
+
+function formatFont(font) {
+  document.execCommand("fontName", false, font);
+}
+
+function formatSize(size) {
+  document.execCommand("fontSize", false, size);
+}
+
