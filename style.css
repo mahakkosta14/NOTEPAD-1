@@ -1,125 +1,183 @@
-
- * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-} 
+/* ===== Reset & Base Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
 
 body {
-    height: 100vh;
-    background-color: #FFFBDE;
+  height: 100vh;
+  background-color: #FFFBDE;
 }
 
-#Note{
-    /* background-color: #096B68; */
-    background-color: #3F7D58;
-    color: aliceblue;
-    font-size: 1rem;
-    height: 10vh ;
-    width: 100vw;
-    align-content: center;
-    text-align: left;
-    justify-content: left;
-    align-items: end;
-    padding: 0.5em;
-}
-h2{
-    color:#3F7D58 ;
-}
-.whole{
-    flex: 3 1 500px;
-    height: 80vh;
-    width: 80vw;
-    border: 0.3em solid black;
-    align-content: left;
-    margin-top: 2em;
-    margin-left: 10vw;
-    border: 0.3em solidblack
-    margin: 1em auto;
-    
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 1rem;
-    
-}
-
-#title{
-    width: 40%;
-    border: 0.2em solid black;
-    margin-bottom: 0.2em;
-    text-align: left;
-    background-color: #F1E7E7;
-    min-height: 1.5em;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-#text{
-    width: 80%;
-    border: 0.2em solid black;
-    text-align: left;
-    background-color: #F1E7E7;
-    min-height: 15em;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    resize: vertical; /* lets users expand if needed */
-}
-
-input[type="text"],
-textarea {
-  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsively scales text */
+/* ===== Header Section ===== */
+#Note {
+  background-color: #3F7D58;
+  color: aliceblue;
+  font-size: 1rem;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
   padding: 0.5em 1em;
+  justify-content: space-between;
+}
+
+/* ===== Headings ===== */
+h2, h3 {
+  color: #3F7D58;
+}
+
+/* ===== Layout Container ===== */
+.content {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  box-sizing: border-box;
 }
 
-input::placeholder,
-textarea::placeholder {
-  font-size: inherit; /* Ensures placeholder scales with input */
+.whole {
+  flex: 3 1 500px;
+  height: auto;
+  width: 80vw;
+  border: 0.3em solid black;
+  margin: 2em auto;
+  padding: 1em;
 }
-/* .Button{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2em;
-    flex-direction: column;
-    gap: 1em;
-}
-button{
-    height: 3em;
-    width: 7em;
-    width: 100%;
-    background-color: #3F7D58;
-    color:aliceblue ;
-}     */
-@media (max-width: 500px) {
-  .whole {
-    width: 100vw;
-    border-width: 0.2em;
-  }
-}
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-@media (max-width: 500px) {
-  .switch {
-    top: 10px;
-    right: 10px;
-    transform: scale(0.9);
-  }
 
-  .sidebar {
-    width: 90%;
-    margin: 1em auto;
-  }
-/* Sliding toggle */
+/* ===== Note Text Containers ===== */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#title, #text {
+  background-color: #F1E7E7;
+  border: 0.2em solid black;
+  text-align: left;
+  padding: 0.5em;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  resize: vertical;
+}
+
+#title {
+  width: 40%;
+  min-height: 1.5em;
+}
+
+#text {
+  width: 80%;
+  min-height: 15em;
+}
+
+/* ===== Format Toolbar ===== */
+.format-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.format-toolbar button,
+.format-toolbar select,
+.format-toolbar input[type="color"] {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.format-toolbar button:hover,
+.format-toolbar select:hover {
+  background-color: #e0e0e0;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  flex: 1 1 200px;
+  background-color: #c0b9b9;
+  padding: 10px;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 2em;
+  min-width: 150px;
+}
+
+#noteList {
+  padding: 0;
+  margin: 0;
+}
+
+#noteList li,
+.note-item {
+  list-style: none;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+#noteList li:hover {
+  background-color: #e0e0e0;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-title {
+  flex-grow: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icon-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+.icon-container button:hover {
+  opacity: 0.7;
+}
+
+/* ===== Button Section ===== */
+.Button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.Button button {
+  background-color: #3F7D58;
+  color: aliceblue;
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Button button:hover {
+  background-color: #2e6248;
+}
+
+/* ===== Toggle Switch ===== */
 .switch {
   position: absolute;
   top: 20px;
@@ -128,18 +186,20 @@ button{
   width: 50px;
   height: 24px;
 }
+
 .switch input {
   display: none;
 }
+
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: #ccc;
   border-radius: 24px;
   transition: 0.4s;
 }
+
 .slider:before {
   content: "";
   position: absolute;
@@ -151,109 +211,48 @@ button{
   transition: 0.4s;
   border-radius: 50%;
 }
+
 input:checked + .slider {
   background-color: #333;
 }
+
 input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Light/dark themes */
+/* ===== Themes ===== */
 body.light {
   background: #f0f0f0;
   color: #222;
 }
+
 body.dark {
   background: #1a1a1a;
   color: #3F7D58;
 }
+
 .container.dark {
   background-color: #1a1a1a;
   border-color: white;
-
-}
-/* adding a side bar */
-
-.sidebar {
-  flex: 1 1 200px;
-  margin: 1em;
-  min-width: 150px
-  width: 200px;
-  float: left;
-  margin-top: 2em;
-  margin-left: 2em;
-  background-color: #c0b9b9;
-  padding: 10px;
-  border-radius: 8px;
-  max-height: 400px;
-  overflow-y: auto;
-}
-.sidebar h3 {
-  margin-top: 0;
-}
-h3{
-  color: #3F7D58 ;
-}
-#noteList li {
-  list-style: none;
-  padding: 8px;
-  cursor: pointer;
-  border-bottom: 1px solid #ccc;
-}
-#noteList li:hover {
-  background-color: #e0e0e0;
 }
 
-.content{
-  display: flex;
-  flex-direction: row;
-    flex-wrap: wrap;
-    width:100%;
-}
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* for edit and dlt button in sidebar*/
-#noteList {
-  padding: 0;
-  margin: 0;
-}
+  .whole {
+    width: 95vw;
+  }
 
-.note-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 4px;
-  border-bottom: 1px solid #ccc;
-}
+  .sidebar {
+    width: 90%;
+    margin: 1em auto;
+  }
 
-.note-title {
-  flex-grow: 1;
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.icon-container button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 5px;
-  width: 3em;
-}
-
-.icon-container button:hover {
-  opacity: 0.7;
-}
-
-.format-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.format-toolbar button, .format-toolbar select, .format-toolbar input[type="color"] {
-  padding: 5px;
-  font-size: 14px;
+  .switch {
+    transform: scale(0.9);
+  }
 }
