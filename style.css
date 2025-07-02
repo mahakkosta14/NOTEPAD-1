@@ -91,10 +91,10 @@ textarea::placeholder {
 }
 
 button{
-    height: 3em;
+/*     height: 3em;
     width: 7em;
     background-color: #3F7D58;
-    color:aliceblue ;
+    color:aliceblue ; */
 }
 
 @media (max-width: 500px) {
@@ -122,6 +122,10 @@ button{
   .Button {
     flex-direction: column;
     gap: 1em;
+      height: 3em;
+    width: 7em;
+    background-color: #3F7D58;
+    color:aliceblue ;
   }
 
   button {
