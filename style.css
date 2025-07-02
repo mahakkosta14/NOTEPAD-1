@@ -82,17 +82,12 @@ input::placeholder,
 textarea::placeholder {
   font-size: inherit; /* Ensures placeholder scales with input */
 }
-
-
 .Button{
     display: flex;
     justify-content: space-around;
     margin-top: 2em;
     flex-direction: column;
     gap: 1em;
-}
-
-button{
     height: 3em;
     width: 7em;
     width: 100%;
