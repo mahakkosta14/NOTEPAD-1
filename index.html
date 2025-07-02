@@ -20,12 +20,14 @@
             <div class="container">
                 <textarea name="title" id="title" placeholder=" My Title"></textarea>
                 <div class="format-toolbar">
-                <button onclick="format('bold')"><b>B</b></button>
-                <button onclick="format('italic')"><i>I</i></button>
-                <button onclick="format('underline')"><u>U</u></button>
-                <button onclick="format('justifyLeft')">Left</button>
-                <button onclick="format('justifyCenter')">Center</button>
-                <button onclick="format('justifyRight')">Right</button>
+                <button onclick="format('bold', this)"><b>B</b></button>
+                <button onclick="format('italic' , this)"><i>I</i></button>
+                <button onclick="format('underline' , this)"><u>U</u></button>
+                    
+                <button class="align-btn" onclick="setAlignment('justifyLeft', this)">Left</button>
+                <button class="align-btn" onclick="setAlignment('justifyCenter', this)">Center</button>
+                <button class="align-btn" onclick="setAlignment('justifyRight', this)">Right</button>
+                    
                 <input type="color" onchange="formatColor(this.value)" title="Text Color">
                 <select onchange="formatFont(this.value)">
                     <option value="Arial">Arial</option>
