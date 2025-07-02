@@ -175,8 +175,11 @@ window.onload = () => {
   renderSidebar(); // Show notes on load
 };
 
-function format(command) {
-  document.execCommand(command, false, null);
+function format(command, buttonElement) {
+  document.execCommand(command);
+
+  // Toggle button appearance
+  buttonElement.classList.toggle("active");
 }
 
 function formatColor(color) {
@@ -189,12 +192,6 @@ function formatFont(font) {
 
 function formatSize(size) {
   document.execCommand("fontSize", false, size);
-}
-function format(command, buttonElement) {
-  document.execCommand(command);
-
-  // Toggle button appearance
-  buttonElement.classList.toggle("active");
 }
 
 
