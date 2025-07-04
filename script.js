@@ -25,8 +25,8 @@ window.onload = () => {
 
 // Save note to local storage
 function saveNote() {
-  const title = document.getElementById("title").value;
-  const note = document.getElementById("text").value;
+  const title = document.getElementById("title").innerHTML;
+  const note = document.getElementById("text").innerHTML;
 
   localStorage.setItem("title", title);
   localStorage.setItem("note", note);
@@ -36,8 +36,8 @@ function saveNote() {
 
 // Download note as text file
 function downloadNote() {
-  const title = document.getElementById("title").value.trim() || "note";
-  const note = document.getElementById("text").value;
+  const title = document.getElementById("title").innerHTML.trim() || "note";
+  const note = document.getElementById("text").innerHTML;
 
   const blob = new Blob([note], { type: "text/plain" });
   const link = document.createElement("a");
@@ -50,8 +50,8 @@ function downloadNote() {
 // Discard current note
 function discardNote() {
   if (confirm("Are you sure you want to discard this note?")) {
-    document.getElementById("title").value = "";
-    document.getElementById("text").value = "";
+    document.getElementById("title").innerHTML = "";
+    document.getElementById("text").innerHTML = "";
 
     // Remove specific note from saved list
     const title = localStorage.getItem("title");
@@ -71,8 +71,8 @@ function discardNote() {
 // Create a new note and clear storage
 function createNewNote() {
   if (confirm("Start a new note? This will erase current content.")) {
-    document.getElementById("title").value = "";
-    document.getElementById("text").value = "";
+    document.getElementById("title").innerHTML = "";
+    document.getElementById("text").innerHTML = "";
     localStorage.removeItem("title");
     localStorage.removeItem("note");
   }
@@ -84,8 +84,8 @@ function getNotes() {
   return JSON.parse(localStorage.getItem("allNotes")) || [];
 }
 function saveNote() {
-  const title = document.getElementById("title").value.trim();
-  const text = document.getElementById("text").value;
+  const title = document.getElementById("title").innerHTML.trim();
+  const text = document.getElementById("text").innerHTML;
 
   if (!title) {
     alert("Please enter a title.");
@@ -125,8 +125,8 @@ function renderSidebar() {
     titleSpan.textContent = note.title;
     titleSpan.classList.add("note-title");
     titleSpan.onclick = () => {
-      document.getElementById("title").value = note.title;
-      document.getElementById("text").value = note.text;
+      document.getElementById("title").innerHTML = note.title;
+      document.getElementById("text").innerHTML = note.text;
     };
 
     const iconContainer = document.createElement("div");
@@ -137,8 +137,8 @@ function renderSidebar() {
     editBtn.title = "Edit";
     editBtn.onclick = (e) => {
       e.stopPropagation();
-      document.getElementById("title").value = note.title;
-      document.getElementById("text").value = note.text;
+      document.getElementById("title").innerHTML = note.title;
+      document.getElementById("text").innerHTML = note.text;
       localStorage.setItem("editingNoteIndex", index);
     };
 
@@ -162,23 +162,6 @@ function renderSidebar() {
     noteList.appendChild(li);
   });
 }
-
-
-// window.onload = () => {
-//   // existing code...
-//   document.getElementById("title").value = localStorage.getItem("title") || "";
-//   document.getElementById("text").value = localStorage.getItem("note") || "";
-//   document.body.className = localStorage.getItem("theme") || "light";
-//   document.getElementById("toggleMode").checked = document.body.className === "dark";
-
-//   document.getElementById("toggleMode").addEventListener("change", function () {
-//     const mode = this.checked ? "dark" : "light";
-//     document.body.className = mode;
-//     localStorage.setItem("theme", mode);
-//   });
-
-//   renderSidebar(); // Show notes on load
-// };
 
 function format(command, buttonElement) {
   document.execCommand(command);
@@ -239,10 +222,7 @@ const noteArea = document.getElementById('text');
 noteArea.addEventListener('input', () => {
   localStorage.setItem('autosavedNote', noteArea.innerHTML);
 });
-// window.onload = () => {
-//   const saved = localStorage.getItem('autosavedNote');
-//   if (saved) noteArea.innerHTML = saved;
-// };
+
 
 
 
