@@ -74,6 +74,8 @@ h2, h3 {
   width: 80%;
   min-height: 15em;
 }
+////TITLE-TOOLBAAR//////
+
 .title-editable {
   border: 2px solid #ccc;
   padding: 8px 12px;
@@ -91,6 +93,13 @@ body.dark .title-editable {
   color: #fff;
   border-color: #666;
 }
+.title-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 /* ===== Format Toolbar ===== */
 .format-toolbar {
   display: flex;
