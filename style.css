@@ -74,7 +74,23 @@ h2, h3 {
   width: 80%;
   min-height: 15em;
 }
+.title-editable {
+  border: 2px solid #ccc;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: white;
+  color: #333;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  min-height: 40px;
+}
 
+body.dark .title-editable {
+  background: #2e2e2e;
+  color: #fff;
+  border-color: #666;
+}
 /* ===== Format Toolbar ===== */
 .format-toolbar {
   display: flex;
