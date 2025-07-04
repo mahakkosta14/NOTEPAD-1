@@ -16,6 +16,11 @@ window.onload = () => {
     document.body.className = newTheme;
     localStorage.setItem("theme", newTheme);
   });
+
+  const saved = localStorage.getItem('autosavedNote');
+  if (saved) noteArea.innerHTML = saved;
+
+  renderSidebar();
 };
 
 // Save note to local storage
@@ -159,21 +164,21 @@ function renderSidebar() {
 }
 
 
-window.onload = () => {
-  // existing code...
-  document.getElementById("title").value = localStorage.getItem("title") || "";
-  document.getElementById("text").value = localStorage.getItem("note") || "";
-  document.body.className = localStorage.getItem("theme") || "light";
-  document.getElementById("toggleMode").checked = document.body.className === "dark";
+// window.onload = () => {
+//   // existing code...
+//   document.getElementById("title").value = localStorage.getItem("title") || "";
+//   document.getElementById("text").value = localStorage.getItem("note") || "";
+//   document.body.className = localStorage.getItem("theme") || "light";
+//   document.getElementById("toggleMode").checked = document.body.className === "dark";
 
-  document.getElementById("toggleMode").addEventListener("change", function () {
-    const mode = this.checked ? "dark" : "light";
-    document.body.className = mode;
-    localStorage.setItem("theme", mode);
-  });
+//   document.getElementById("toggleMode").addEventListener("change", function () {
+//     const mode = this.checked ? "dark" : "light";
+//     document.body.className = mode;
+//     localStorage.setItem("theme", mode);
+//   });
 
-  renderSidebar(); // Show notes on load
-};
+//   renderSidebar(); // Show notes on load
+// };
 
 function format(command, buttonElement) {
   document.execCommand(command);
@@ -234,10 +239,10 @@ const noteArea = document.getElementById('text');
 noteArea.addEventListener('input', () => {
   localStorage.setItem('autosavedNote', noteArea.innerHTML);
 });
-window.onload = () => {
-  const saved = localStorage.getItem('autosavedNote');
-  if (saved) noteArea.innerHTML = saved;
-};
+// window.onload = () => {
+//   const saved = localStorage.getItem('autosavedNote');
+//   if (saved) noteArea.innerHTML = saved;
+// };
 
 
 
