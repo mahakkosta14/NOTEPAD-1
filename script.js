@@ -179,6 +179,12 @@ function formatFont(font) {
   document.execCommand("fontName", false, font);
   document.getElementById("text").focus();
 }
+// Fallback: apply font directly to editor
+  const editor = document.getElementById("text");
+  editor.style.fontFamily = font;
+  editor.focus();
+}
+
 
 function formatSize(size) {
   document.execCommand("fontSize", false, size);
@@ -191,25 +197,6 @@ function setAlignment(command, buttonElement) {
   buttonElement.classList.add('active');
   document.getElementById("text").focus();
 }
-// function format(command, buttonElement) {
-//   document.execCommand(command);
-
-//   // Toggle button appearance
-//   buttonElement.classList.toggle("active");
-// }
-
-// function formatColor(color) {
-//   document.execCommand("foreColor", false, color);
-// }
-
-// function formatFont(font) {
-//   document.execCommand("fontName", false, font);
-// }
-
-// function formatSize(size) {
-//   document.execCommand("fontSize", false, size);
-// }
-
 function setAlignment(command, buttonElement) {
   document.execCommand(command);
 
