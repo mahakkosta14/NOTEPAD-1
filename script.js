@@ -162,25 +162,53 @@ function renderSidebar() {
     noteList.appendChild(li);
   });
 }
-
 function format(command, buttonElement) {
   document.execCommand(command);
-
-  // Toggle button appearance
   buttonElement.classList.toggle("active");
+
+  // Refocus the editor to apply formatting
+  document.getElementById("text").focus();
 }
 
 function formatColor(color) {
   document.execCommand("foreColor", false, color);
+  document.getElementById("text").focus();
 }
 
 function formatFont(font) {
   document.execCommand("fontName", false, font);
+  document.getElementById("text").focus();
 }
 
 function formatSize(size) {
   document.execCommand("fontSize", false, size);
+  document.getElementById("text").focus();
 }
+
+function setAlignment(command, buttonElement) {
+  document.execCommand(command);
+  document.querySelectorAll('.align-btn').forEach(btn => btn.classList.remove('active'));
+  buttonElement.classList.add('active');
+  document.getElementById("text").focus();
+}
+// function format(command, buttonElement) {
+//   document.execCommand(command);
+
+//   // Toggle button appearance
+//   buttonElement.classList.toggle("active");
+// }
+
+// function formatColor(color) {
+//   document.execCommand("foreColor", false, color);
+// }
+
+// function formatFont(font) {
+//   document.execCommand("fontName", false, font);
+// }
+
+// function formatSize(size) {
+//   document.execCommand("fontSize", false, size);
+// }
 
 function setAlignment(command, buttonElement) {
   document.execCommand(command);
