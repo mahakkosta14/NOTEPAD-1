@@ -177,8 +177,7 @@ function formatColor(color) {
 
 function formatFont(font) {
   document.execCommand("fontName", false, font);
-  document.getElementById("text").focus();
-}
+  
 // Fallback: apply font directly to editor
   const editor = document.getElementById("text");
   editor.style.fontFamily = font;
@@ -243,18 +242,19 @@ const wordCountDisplay = document.getElementById("wordCount");
 const charCountDisplay = document.getElementById("charCount");
 
 function updateCounter() {
-  const rawHTML = textEditor.innerHTML;
-  const plainText = textEditor.textContent || textEditor.innerText || "";
+  const plainText = textEditor.innerText || "";
 
-  const words = plainText.trim().length > 0 ? plainText.trim().split(/\s+/).length : 0;
+  const words = plainText.trim().length > 0
+    ? plainText.trim().split(/\s+/).filter(word => word.length > 0).length
+    : 0;
+
   const chars = plainText.replace(/\s/g, "").length;
 
   wordCountDisplay.textContent = words;
   charCountDisplay.textContent = chars;
 }
 
-textEditor.addEventListener("input", updateCounter);
-textEditor.addEventListener("keyup", updateCounter);
-textEditor.addEventListener("paste", () => {
-  setTimeout(updateCounter, 50); // Wait for paste to complete
-});
+// Trigger on input, keyup, paste, and even mouseup (for drag/drop)
+["input", "keyup", "paste", "mouseup"].forEach(event =>
+  textEditor.addEventListener(event, updateCounter)
+);
