@@ -368,4 +368,11 @@ body.dark {
   display: block;
 }
 
+#counterDisplay {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 
