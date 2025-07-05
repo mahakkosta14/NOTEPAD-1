@@ -130,6 +130,42 @@ body.dark .title-editable {
   border: 1px solid #2e6248;
 }
 
+.format-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.format-toolbar button, 
+.format-toolbar select, 
+.format-toolbar input[type="color"] {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.format-toolbar button:hover,
+.format-toolbar select:hover,
+.format-toolbar input[type="color"]:hover {
+  box-shadow: 0 0 5px #bbb;
+  background-color: #eaeaea;
+}
+
+.align-btn {
+  background-color: #ddd;
+}
+.align-btn:hover {
+  background-color: #bbb;
+}
+
 /* ===== Sidebar ===== */
 .sidebar {
   flex: 1 1 200px;
@@ -264,6 +300,24 @@ body.dark {
 .container.dark {
   background-color: #1a1a1a;
   border-color: white;
+}
+
+/* ===NewButton ===*/
+.newButton button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.newButton button:hover {
+  background-color: #45a049;
 }
 
 /* ===== Responsive Breakpoints ===== */
