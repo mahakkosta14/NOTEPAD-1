@@ -237,7 +237,19 @@ const noteArea = document.getElementById('text');
 noteArea.addEventListener('input', () => {
   localStorage.setItem('autosavedNote', noteArea.innerHTML);
 });
+//word and character count
+const textEditor = document.getElementById("text");
+const wordCountDisplay = document.getElementById("wordCount");
+const charCountDisplay = document.getElementById("charCount");
 
+textEditor.addEventListener("input", () => {
+  const text = textEditor.innerText.trim();
+  const words = text.length > 0 ? text.split(/\s+/).length : 0;
+  const chars = text.replace(/\s/g, "").length;
+
+  wordCountDisplay.textContent = words;
+  charCountDisplay.textContent = chars;
+});
 
 
 
